@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all posts</title>
+</head>
+<body>
+    <div style="display:flex, flex-wrap: wrap">
+    {% for array in a %}
+         <div style="background:gray">
+                <a style="display:flex" href="">
+                    <h2>{{ array.title }}</h2>
+                    <p>{{ array.created_at }}</p>
+                </a>
+                <p>
+                    {{ array.content }}
+                </p>
+                <a  href="">
+                    <p>{{array.author}}</p>
+                </a>
+
+         </div>
+        {% empty %}
+            <h1>No posts found.</h1>
+        {% endfor %}
+    </div>
+</body>
+</html>
